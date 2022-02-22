@@ -41,6 +41,10 @@ class ViewController: UIViewController, UserDelegate {
     }
     
     func dataReceived(data: [Data]) {
+        DispatchQueue.main.async {
+            self.label.text = data[0].title
+        }
+        
         print(data[0].title)
     }
 
